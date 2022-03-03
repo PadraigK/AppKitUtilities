@@ -7,7 +7,7 @@
 
 import AppKit
 
-public class XiblessVC<View: XiblessView>: NSViewController {
+open class XiblessVC<View: XiblessView>: NSViewController {
     override open func loadView() {
         view = View()
     }
@@ -16,17 +16,17 @@ public class XiblessVC<View: XiblessView>: NSViewController {
         view as! View
     }
 
-    init() {
+    public init() {
         super.init(nibName: nil, bundle: nil)
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-public class XiblessView: NSView {
+open class XiblessView: NSView {
     public required init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +34,7 @@ public class XiblessView: NSView {
     }
 
     @available(*, unavailable)
-    required init?(coder: NSCoder) {
+    public required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 
